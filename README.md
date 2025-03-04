@@ -8,4 +8,4 @@ A little about me:
 - I am taking STATS 220 because it is a required course but I am excited to take it anyway!
 - I am interested in learning about R this semester in an in-depth way.
 
-A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
+A meme that captures how I currently feel about my university studies is ![alt text](https://tenor.com/bZQXP.gif)

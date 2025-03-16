@@ -14,5 +14,11 @@ A meme that captures how I currently feel about my university studies is:
 
 # _Part A (Where the wild things are):_
 
-- **Pizza on pineapple** to be or not to be, that is the question.
-* I miss renting movies from video eazy as a kid...
+* **Pizza on pineapple** to be or not to be, that is the question.
+1. I miss renting movies from video eazy as a kid...
+
+[Lego.com](https://www.lego.com/en-nz)
+
+[Alessandro's pizzeria](https://www.alessandrospizzeria.co.nz)
+
+![And this I do not forgive!](https://media1.tenor.com/m/JRTPH7QvXVYAAAAC/the-god-father-marlon-brando.gif)

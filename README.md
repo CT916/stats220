@@ -14,6 +14,8 @@ A meme that captures how I currently feel about my university studies is:
 
 # _Part A (Where the wild things are):_
 
+### Thoughts I have every so often:
+
 * **Pizza on pineapple** to be or not to be, that is the question.
 1. I miss renting movies from video eazy as a kid...
 

@@ -1,0 +1,56 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+body {font-family: 'Comic Neue';color:#000000}
+h1 {color:#169B62; font-weight: bold}
+```
+
+## My dynamic report on Instagram reels
+
+The data ahead captures important summary statistics like the time it would take to watch all of the instagram reels in this dataset and the earliest time in the day someone watched and logged as an observation an instagram reel.  
+
+```{r}
+#R code for report:
+library(tidyverse)
+  
+logged_data<-read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTWPMvrJWHZ_PcR6W1FM8YKUb1cBGemKi8cvch30d_5-jWERfNZBfW_-qeSnY__wAGS3d5X8KpIZIog/pub?gid=696950130&single=true&output=csv")
+  
+latest_data<-logged_data %>% 
+  rename(completed_timestamp = 1, 
+      reel_time_of_day = 2, 
+      length_of_reel = 3, 
+      reel_type = 4, 
+      media_type = 5, 
+      kind_of_audio = 6)  
+  
+paste("The earliest time of day someone saw an instagram reel was at", min(latest_data$reel_time_of_day), "am")
+    
+((ms(latest_data$length_of_reel, roll = TRUE) %>% sum())/60) %>% round(2) -> sum_length
+    ms(sum_length, roll = TRUE) %>% 
+    paste("is the time it would take to watch all the reels in this dataset")  
+  
+latest_data_longer <- latest_data %>% 
+  separate_rows(reel_type, sep = ", ") %>% 
+  mutate(reel_type = str_to_lower(reel_type))
+  
+ggplot(latest_data_longer) +
+  geom_bar(aes(y = reel_type, fill = "#f8766d")) + 
+  labs(title = "What kinds of Instagram reels were watched?", x = "Number of reels", y = "Reel type")
+  
+  
+latest_data_longer <- latest_data %>% 
+  separate_rows(kind_of_audio, sep = ", ") %>% 
+  mutate(kind_of_audio = str_to_lower(kind_of_audio))
+  
+ggplot(latest_data_longer) +
+  geom_bar(aes(x = kind_of_audio, fill = "#f8766d"))+ 
+  labs(title = "What kinds of audio do Instagram reels have?", x = "Kind of audio", y = "Number of reels")
+```
